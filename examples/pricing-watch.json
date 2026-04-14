@@ -1,0 +1,38 @@
+{
+  "workflow": "pricing-watch",
+  "name": "Starter pricing watch example",
+  "dryRun": true,
+  "goal": "Track pricing page changes for a competitor",
+  "constraints": [
+    "Do not submit forms",
+    "Record only public information"
+  ],
+  "target": {
+    "baseUrl": "https://example.com",
+    "entryUrl": "https://example.com/pricing",
+    "urls": [
+      "https://example.com/pricing",
+      "https://example.com/enterprise"
+    ]
+  },
+  "environment": {
+    "name": "production",
+    "locale": "en-US"
+  },
+  "artifacts": {
+    "outputDir": "./runs/pricing-watch-example",
+    "captureScreenshots": false
+  },
+  "scenario": {
+    "watchRules": [
+      "Detect plan renames",
+      "Detect annual discount changes",
+      "Detect new feature gating language"
+    ],
+    "baselineNote": "Compare against the last known public pricing snapshot",
+    "segments": [
+      "self-serve",
+      "enterprise"
+    ]
+  }
+}

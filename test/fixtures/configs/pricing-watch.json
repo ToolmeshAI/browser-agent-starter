@@ -1,0 +1,33 @@
+{
+  "workflow": "pricing-watch",
+  "name": "Acme pricing watch",
+  "dryRun": true,
+  "target": {
+    "baseUrl": "https://example-competitor.com",
+    "entryUrl": "https://example-competitor.com/pricing",
+    "urls": [
+      "https://example-competitor.com/pricing",
+      "https://example-competitor.com/enterprise"
+    ]
+  },
+  "environment": {
+    "name": "production",
+    "locale": "en-US"
+  },
+  "artifacts": {
+    "outputDir": "./tmp/pricing-watch",
+    "captureScreenshots": false
+  },
+  "scenario": {
+    "watchRules": [
+      "Detect plan renames",
+      "Detect annual discount changes",
+      "Detect new feature gating language"
+    ],
+    "baselineNote": "Compare against the April baseline",
+    "segments": [
+      "self-serve",
+      "enterprise"
+    ]
+  }
+}

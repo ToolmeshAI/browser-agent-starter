@@ -1,0 +1,28 @@
+{
+  "workflow": "docs-audit",
+  "name": "Starter docs audit example",
+  "dryRun": true,
+  "target": {
+    "baseUrl": "https://app.example.com",
+    "entryUrl": "https://docs.example.com/getting-started",
+    "urls": [
+      "https://docs.example.com/getting-started",
+      "https://docs.example.com/settings"
+    ]
+  },
+  "environment": {
+    "name": "production",
+    "locale": "en-US"
+  },
+  "artifacts": {
+    "outputDir": "./runs/docs-audit-example",
+    "captureScreenshots": false
+  },
+  "scenario": {
+    "journey": "Create a project and verify the settings navigation",
+    "claims": [
+      "The docs explain where to create a project",
+      "The docs explain how to find settings"
+    ]
+  }
+}

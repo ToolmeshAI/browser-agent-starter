@@ -1,0 +1,28 @@
+{
+  "workflow": "docs-audit",
+  "name": "Acme docs audit",
+  "dryRun": true,
+  "target": {
+    "baseUrl": "https://app.example.com",
+    "entryUrl": "https://docs.example.com/getting-started",
+    "urls": [
+      "https://docs.example.com/getting-started",
+      "https://docs.example.com/invite-users"
+    ]
+  },
+  "environment": {
+    "name": "production",
+    "locale": "en-US"
+  },
+  "artifacts": {
+    "outputDir": "./tmp/docs-audit",
+    "captureScreenshots": false
+  },
+  "scenario": {
+    "journey": "Create a project and invite a teammate",
+    "claims": [
+      "The docs show where to create a project",
+      "The docs explain how to invite a teammate"
+    ]
+  }
+}

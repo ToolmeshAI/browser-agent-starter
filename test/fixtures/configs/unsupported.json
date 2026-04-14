@@ -1,0 +1,19 @@
+{
+  "workflow": "not-a-real-workflow",
+  "name": "Broken config",
+  "dryRun": true,
+  "target": {
+    "baseUrl": "https://example.com",
+    "entryUrl": "https://example.com/start",
+    "urls": []
+  },
+  "environment": {
+    "name": "production",
+    "locale": "en-US"
+  },
+  "artifacts": {
+    "outputDir": "./tmp/unsupported",
+    "captureScreenshots": false
+  },
+  "scenario": {}
+}

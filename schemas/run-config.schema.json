@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "browser-agent-starter run config",
+  "type": "object",
+  "required": [
+    "workflow",
+    "name",
+    "dryRun",
+    "target",
+    "environment",
+    "artifacts",
+    "scenario"
+  ],
+  "properties": {
+    "workflow": {
+      "type": "string",
+      "enum": [
+        "docs-audit",
+        "signup-smoke-test",
+        "pricing-watch"
+      ]
+    },
+    "name": {
+      "type": "string"
+    },
+    "dryRun": {
+      "type": "boolean"
+    },
+    "target": {
+      "type": "object",
+      "required": [
+        "baseUrl",
+        "entryUrl",
+        "urls"
+      ],
+      "properties": {
+        "baseUrl": {
+          "type": "string"
+        },
+        "entryUrl": {
+          "type": "string"
+        },
+        "urls": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "environment": {
+      "type": "object",
+      "required": [
+        "name",
+        "locale"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "locale": {
+          "type": "string"
+        }
+      }
+    },
+    "artifacts": {
+      "type": "object",
+      "required": [
+        "outputDir",
+        "captureScreenshots"
+      ],
+      "properties": {
+        "outputDir": {
+          "type": "string"
+        },
+        "captureScreenshots": {
+          "type": "boolean"
+        }
+      }
+    },
+    "scenario": {
+      "type": "object"
+    }
+  }
+}

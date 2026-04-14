@@ -1,0 +1,37 @@
+{
+  "name": "browser-agent-starter",
+  "version": "0.1.0",
+  "description": "Lightweight starter scaffolding for browser-agent dry-run workflows.",
+  "type": "module",
+  "exports": "./src/index.js",
+  "bin": {
+    "browser-agent-starter": "./bin/browser-agent-starter.js"
+  },
+  "scripts": {
+    "test": "node --test test/cli.test.js test/cli.test.mjs test/config.test.mjs test/run-workflows.test.mjs",
+    "start": "node ./bin/browser-agent-starter.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "schemas",
+    "examples",
+    "README.md",
+    "README.zh-CN.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "playwright-core": "^1.54.2"
+  },
+  "license": "MIT",
+  "keywords": [
+    "browser-agent",
+    "playbook",
+    "cli",
+    "dry-run",
+    "playwright"
+  ]
+}

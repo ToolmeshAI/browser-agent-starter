@@ -1,0 +1,33 @@
+{
+  "workflow": "signup-smoke-test",
+  "name": "Acme signup smoke test",
+  "dryRun": true,
+  "target": {
+    "baseUrl": "https://app.example.com",
+    "entryUrl": "https://app.example.com/signup",
+    "urls": [
+      "https://app.example.com/signup",
+      "https://app.example.com/welcome"
+    ]
+  },
+  "environment": {
+    "name": "staging",
+    "locale": "en-US"
+  },
+  "artifacts": {
+    "outputDir": "./tmp/signup-smoke-test",
+    "captureScreenshots": false
+  },
+  "scenario": {
+    "checkpoints": [
+      "Submit signup form",
+      "Confirm activation message",
+      "Reach first-run welcome page"
+    ],
+    "forbiddenStates": [
+      "Redirect loop",
+      "Blank confirmation screen"
+    ],
+    "testAccountStrategy": "Use disposable inbox aliases"
+  }
+}
